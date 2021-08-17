@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
+
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/normal_30dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/normal_25dp"
+      android:layout_marginBottom="@dimen/normal_25dp"
+      android:orientation="horizontal">
+
+      <TextView
+        android:id="@+id/item_tv_phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="山东宏大建筑"
+        android:textColor="@color/black"
+        android:textSize="@dimen/normal_45sp" />
+
+      <TextView
+        android:id="@+id/item_tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/normal_60dp"
+        android:text="陈羽凡"
+        android:textColor="@color/color_aaaaaa"
+        android:textSize="@dimen/normal_33sp" />
+
+    </LinearLayout>
+  </LinearLayout>
+
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/normal_2dp"
+    android:layout_marginLeft="@dimen/normal_30dp"
+    android:layout_marginTop="@dimen/normal_20dp"
+    android:background="@color/app_line_color" />
+</LinearLayout>

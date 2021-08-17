@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Dialpad in the Phone app. -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <LinearLayout
+    android:id="@+id/ll_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/normal_60dp"
+      android:background="@color/c_3396FC" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/c_3396FC"
+      android:gravity="center">
+
+      <ImageView
+        android:id="@+id/iv_check"
+        android:layout_width="@dimen/normal_80dp"
+        android:layout_height="@dimen/normal_58dp"
+        android:layout_marginLeft="@dimen/normal_55dp"
+        android:src="@drawable/ic_check" />
+
+      <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingTop="@dimen/normal_40dp"
+        android:paddingBottom="@dimen/normal_40dp"
+        android:text="拨号"
+        android:textColor="@color/white"
+        android:textSize="@dimen/normal_54sp" />
+
+      <ImageView
+        android:id="@+id/iv_call_record"
+        android:layout_width="@dimen/normal_80dp"
+        android:layout_height="@dimen/normal_58dp"
+        android:layout_gravity="center"
+        android:layout_marginRight="@dimen/normal_20dp"
+        android:src="@drawable/ic_call_last"
+        android:visibility="gone"/>
+      <ImageView
+        android:id="@+id/iv_exit"
+        android:layout_width="@dimen/normal_80dp"
+        android:layout_height="@dimen/normal_62dp"
+        android:layout_gravity="center"
+        android:layout_marginRight="@dimen/normal_50dp"
+        android:src="@drawable/exit"/>
+    </LinearLayout>
+  </LinearLayout>
+  <com.scwang.smartrefresh.layout.SmartRefreshLayout
+    android:id="@+id/refreshlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/ll_title"
+    android:layout_above="@+id/ll_view">
+
+    <android.support.v7.widget.RecyclerView
+      android:id="@+id/recycler_view"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:overScrollMode="never"
+      tools:listitem="@layout/item_call_record"/>
+  </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+  <LinearLayout
+    android:id="@+id/ll_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="10dp"
+      android:background="@drawable/shadow_fade_up" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/normal_160dp"
+      android:orientation="horizontal">
+
+      <ImageButton
+        android:id="@+id/dialpad_overflow"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:background="@null"
+        android:contentDescription="More options"
+        android:gravity="center"
+        android:paddingLeft="8dp"
+        android:paddingRight="10dp"
+        android:src="@mipmap/ic_overflow_menu"
+        android:tint="#b3b3b3"
+        android:visibility="gone"/>
+
+      <com.ctao.dialer.widght.DigitsEditText
+        android:id="@+id/digits"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="10000"
+        android:background="@android:color/transparent"
+        android:cursorVisible="false"
+        android:focusableInTouchMode="true"
+        android:freezesText="true"
+        android:gravity="center"
+        android:maxLines="1"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="#333"
+        android:textCursorDrawable="@null"
+        android:textSize="34sp"
+        android:textStyle="normal"
+        app:resizing_text_min_size="24dp" />
+
+      <ImageButton
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@null"
+        android:contentDescription="backspace"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:src="@mipmap/ic_dialpad_delete"
+        android:state_enabled="false"
+        android:tint="#b3b3b3" />
+    </LinearLayout>
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:background="#e3e3e3" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/normal_650dp"
+      android:clipChildren="false"
+      android:orientation="vertical">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View style="@style/DialpadSpaceStyle" />
+
+        <LinearLayout
+          android:id="@+id/dv_1"
+          style="@style/DialpadKeyButtonStyle"
+          android:layout_gravity="center"
+          android:clipChildren="false"
+          android:gravity="center"
+          android:orientation="vertical">
+
+          <TextView
+            android:id="@+id/tv_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#0288d1"
+            android:textSize="36sp" />
+
+<!--          <FrameLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <ImageView-->
+<!--              android:layout_width="wrap_content"-->
+<!--              android:layout_height="wrap_content"-->
+<!--              android:layout_gravity="center"-->
+<!--              android:gravity="center"-->
+<!--              android:scaleType="fitCenter"-->
+<!--              android:src="@mipmap/ic_dialpad_voicemail"-->
+<!--              android:tint="#919191" />-->
+
+<!--            <TextView-->
+<!--              android:id="@+id/tv_text2"-->
+<!--              android:layout_width="wrap_content"-->
+<!--              android:layout_height="wrap_content"-->
+<!--              android:gravity="center"-->
+<!--              android:textColor="#737373"-->
+<!--              android:textSize="12sp" />-->
+<!--          </FrameLayout>-->
+        </LinearLayout>
+
+        <com.ctao.dialer.widght.DialerKeyView
+          android:id="@+id/dv_2"
+          style="@style/DialpadKeyButtonStyle"
+          app:text1="2"
+          app:text2="ACB" />
+
+        <com.ctao.dialer.widght.DialerKeyView
+          android:id="@+id/dv_3"
+          style="@style/DialpadKeyButtonStyle"
+          app:text1="3"
+          app:text2="DEF" />
+
+        <View style="@style/DialpadSpaceStyle" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View style="@style/DialpadSpaceStyle" />
+
+        <com.ctao.dialer.widght.DialerKeyView
+          android:id="@+id/dv_4"
+          style="@style/DialpadKeyButtonStyle"
+          app:text1="4"
+          app:text2="GHI" />
+
+        <com.ctao.dialer.widght.DialerKeyView
+          android:id="@+id/dv_5"
+          style="@style/DialpadKeyButtonStyle"
+          app:text1="5"
+          app:text2="JKL" />
+
+        <com.ctao.dialer.widght.DialerKeyView
+          android:id="@+id/dv_6"
+          style="@style/DialpadKeyButtonStyle"
+          app:text1="6"
+          app:text2="MNO" />
+
+        <View style="@style/DialpadSpaceStyle" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View style="@style/DialpadSpaceStyle" />
+
+        <com.ctao.dialer.widght.DialerKeyView
+          android:id="@+id/dv_7"
+          style="@style/DialpadKeyButtonStyle"
+          app:text1="7"
+          app:text2="PQRS" />
+
+        <com.ctao.dialer.widght.DialerKeyView
+          android:id="@+id/dv_8"
+          style="@style/DialpadKeyButtonStyle"
+          app:text1="8"
+          app:text2="TUV" />
+
+        <com.ctao.dialer.widght.DialerKeyView
+          android:id="@+id/dv_9"
+          style="@style/DialpadKeyButtonStyle"
+          app:text1="9"
+          app:text2="WXYZ" />
+
+        <View style="@style/DialpadSpaceStyle" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View style="@style/DialpadSpaceStyle" />
+
+        <com.ctao.dialer.widght.DialerKeyView
+          android:id="@+id/dv_xing"
+          style="@style/DialpadKeyButtonStyle"
+          app:text1="*"
+          app:text2="(P)" />
+
+        <com.ctao.dialer.widght.DialerKeyView
+          android:id="@+id/dv_0"
+          style="@style/DialpadKeyButtonStyle"
+          app:text1="0"
+          app:text2="+" />
+
+        <com.ctao.dialer.widght.DialerKeyView
+          android:id="@+id/dv_jing"
+          style="@style/DialpadKeyButtonStyle"
+          app:text1="#"
+          app:text2="(W)" />
+
+        <View style="@style/DialpadSpaceStyle" />
+      </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:layout_marginBottom="8dp">
+
+      <ImageButton
+        android:id="@+id/ib_call"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center"
+        android:background="@mipmap/fab_green"
+        android:contentDescription="dial"
+        android:src="@mipmap/fab_ic_call" />
+    </FrameLayout>
+  </LinearLayout>
+
+</RelativeLayout>

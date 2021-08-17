@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary">#3F51B5</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="colorAccent">#FF4081</color>
+  <color name="tab_panel_bg">#ffffff</color>
+  <color name="tab_panel_divider">#D4D6D8</color>
+
+
+  <!-- new -->
+  <color name="c_333333">#333333</color>
+
+  <color name="c_d8d3cf">#d8d3cf</color>
+
+  <color name="white">#ffffff</color>
+
+  <color name="c_a59a93">#a59a93</color>
+
+  <!--pressed-->
+  <color name="c_b9afa9">#b9afa9</color>
+
+  <color name="c_c35b3a">#c35b3a</color>
+
+  <color name="c_9d472c">#9d472c</color>
+  <color name="c_3396FC">#3396FC</color>
+  <color name="c_1B91FF">#1B91FF</color>
+  <color name="c_31363B">#31363B</color>
+  <color name="c_CAD2D9">#CAD2D9</color>
+  <color name="c_F2F2F2">#F2F2F2</color>
+  <color name="app_line_color">#f4f4f4</color>
+  <color name="color_aaaaaa">#aaaaaa</color>
+  <color name="color_f2f2f2">#f2f2f2</color>
+  <color name="recording_time_elapsed_text">#FFFFFFFF</color>
+  <color name="color_1977FD">#1977FD</color>
+  <color name="color_FD5151">#FD5151</color>
+</resources>
